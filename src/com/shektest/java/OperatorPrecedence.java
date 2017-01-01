@@ -1,6 +1,6 @@
 package com.shektest.java;
 
-public class Main {
+public class OperatorPrecedence {
 
     public static void main(String[] args) {
 	System.out.println("Hello, package test");
@@ -41,7 +41,7 @@ public class Main {
        System.out.println(result2);
       //division then multiplication then addition
        int result3 = valA / valC * valD + valB;
-// inner paren, then outer paren then division
+       // inner paren, then outer paren then division
        int result4 = valA / (valC * (valD + valB));
 
 
