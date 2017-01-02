@@ -9,8 +9,44 @@ public class OperatorPrecedence {
         System.out.println("\n");
         operatorPrecedence();
         System.out.println("\n");
+        typeConversions();
     }
 
+    // Notes: implicit conversion e.g. long = int, java will convert to the largest type.
+    // e.g float = int, double = float
+    // above is also called widening conversion
+    // the opposite is narrowing primitive conversion
+
+      public static void typeConversions(){
+
+
+        //arithmetic types
+        //short, int, long, float, double
+
+
+        float val1 = 52223233.45f;
+        int val3 = 6;
+
+        // this works
+        float val4 = val3;
+
+        //but this does not
+       // int val2 = val1;
+
+          //explicit conversion
+          int val2 = (int)val1;
+
+// this will print out
+          System.out.println("Conversion Successful "  +val2);
+
+
+          // implicit conversion from large primitive type to smaller primitive type
+          // will not work.
+          // explicit conversion will work, but it might result in loss.
+
+    }
+
+     //<editor-fold desc="operator precedence">
     private static void operatorPrecedence() {
         //operator precedence
 
@@ -20,8 +56,6 @@ public class OperatorPrecedence {
         //4. multiplicative operations e.g. /, *
         //5. additive operations e.g. +, -
         //6. left to right for operators of same precedence
-
-
 
 
        int valA = 21;
@@ -67,4 +101,8 @@ public class OperatorPrecedence {
 
 
     }
+
+    //</editor-fold>
+
+
 }
