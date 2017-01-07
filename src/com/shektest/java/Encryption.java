@@ -35,6 +35,10 @@ public class Encryption {
             // this means its not a perfect square
             row = intSqr;
             col = intSqr + 1;
+            //ensure that row X col >= L
+            if((row*col) < stringLength) {
+                row += 1;
+            }
         }
 
         else
@@ -43,24 +47,49 @@ public class Encryption {
 
         }
 
+//thisiswhatiamtalkingaboutwhenitalkaboutlife
 
         System.out.println("Row : " + row + " Col " + col );
-
+        char[] chArray = s.toCharArray();
         String wordArray[][] = new String[row][col];
         int innerCount = 0;
-        for(int i=0; i <= row; i++){
+        String insertedFormat = "";
+        for(int i=0; i < row; i++)
 
+        {
+            insertedFormat = "";
 
-            for (int j=0; j<= col && innerCount < stringLength; j++){
+            for (int j=0; j< col && innerCount < stringLength; j++){
+
+                wordArray[i][j] =  String.valueOf(chArray[innerCount]);
                 innerCount++;
+                insertedFormat += wordArray[i][j];
 
             }
 
+            System.out.println(insertedFormat);
+        }
+
+        String finalOutput = "";
+        innerCount = 0;
+        for (int j=0; j< col && innerCount < stringLength; j++){
+
+            for(int i=0; i < row; i++){
+                if(wordArray[i][j] != null){
+                    finalOutput += wordArray[i][j];
+                }
+
+                innerCount++;
+            }
+
+            finalOutput += " ";
 
         }
 
 
         System.out.println("Loop iterations " + innerCount);
+
+        System.out.println(finalOutput);
 
     }
 }
